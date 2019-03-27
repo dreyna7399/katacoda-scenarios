@@ -1,0 +1,40 @@
+{
+  "title": "Creating Your First Wind River Katacoda Scenario",
+  "description": "Learn how to create your first Wind River Katacoda scenario",
+  "details": {
+    "steps": [
+      {
+        "title": "Step 1 - Scenario Structure - WR",
+        "text": "step1.md"
+      },
+      {
+        "title": "Step 2 - Scenario Syntax - WR",
+        "text": "step2.md"
+      },
+      {
+        "title": "Step 3 - CLI - WR",
+        "text": "step3.md"
+      },
+      {
+        "title": "Step 4 - VS Code Extension - WR",
+        "text": "step4.md"
+      },
+      {
+        "title": "Step 5 - WebHooks - WR",
+        "text": "step5.md"
+      }
+    ],
+    "intro": {
+      "text": "intro.md"
+    },
+    "finish": {
+      "text": "finish.md"
+    }
+  },
+  "environment": {
+    "uilayout": "editor-terminal"
+  },
+  "backend": {
+    "imageid": "git"
+  }
+}

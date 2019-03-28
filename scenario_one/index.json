@@ -1,6 +1,9 @@
 {
-  "title": "Creating Your First Wind River Katacoda Scenario",
-  "description": "Learn how to create your first Wind River Katacoda scenario",
+  "pathwayTitle": "LTS-18 Tutorials",
+  "title": "Multilib in WRLinux 10.18",
+  "description": "Learn how to create Multilibs in WRLinux 10.18",
+  "difficulty": "intermediate",
+  "time": "5-10 minutes",
   "details": {
     "steps": [
       {
@@ -29,12 +32,19 @@
     },
     "finish": {
       "text": "finish.md"
+    },
+    "assets": {
+      "host01": [
+        {"file": "setup.sh", "target": "~/wrlinux-x/", "chmod": "+x"},
+        {"file": "oe-init-build-env", "target": "~/", "chmod": "+x"},
+        {"file": "bitbake", "target": "~/", "chmod": "+x"}
+      ]
     }
   },
   "environment": {
-    "uilayout": "editor-terminal"
+    "uilayout": "terminal"
   },
   "backend": {
-    "imageid": "git"
+    "imageid": "ubuntu"
   }
 }

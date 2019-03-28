@@ -37,7 +37,10 @@
       "host01": [
         {"file": "setup.sh", "target": "~/wrlinux-x/", "chmod": "+x"},
         {"file": "oe-init-build-env", "target": "~/", "chmod": "+x"},
-        {"file": "bitbake", "target": "~/", "chmod": "+x"}
+        {"file": "bitbake", "target": "~/layers/oe-core/bitbake/bin/", "chmod": "+x"},
+        {"file": "environment-setup-x86_64-wrlinuxsdk-linux", "target": "~/", "chmod": "+x"},
+        {"file": "setup.sh", "target": "~/meta/", "chmod": "+x"},
+        {"file": "setup.sh", "target": "~/bin/", "chmod": "+x"}
       ]
     }
   },

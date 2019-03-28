@@ -1,2 +1,3 @@
 echo "... oe-init-build-env ..."
+export PATH=$PATH;`pwd`/layers/oe-core/bitbake/bin
 

@@ -8,7 +8,7 @@ This is done by adding `execute` to the markdown code block, for example:
 
 Now do this stuff:
 `./wrlinux-x/setup.sh --machine qemumips64 --all-layers --dl-layers`{{execute}}
-... and this ...
+<p>... and this ...</p>
 `source oe-init-build-env`{{execute}}
 
 `bitbake -g curl`{{execute}}

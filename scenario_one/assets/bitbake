@@ -1,2 +1,4 @@
 echo "BITBAKE:$*"
+mkdir -p build
+
 

@@ -7,8 +7,8 @@ This is done by adding `execute` to the markdown code block, for example:
 <pre>`echo "Run in Terminal"`{{execute}}</pre>
 
 Now do this stuff:
-<pre>`./wrlinux-x/setup.sh --machine qemumips64 --all-layers --dl-layers`{{execute}}</pre>
-<pre>`source oe-init-build-env`{{execute}}</pre>
-<pre>`bitbake -g curl`{{execute}}</pre>
+`./wrlinux-x/setup.sh --machine qemumips64 --all-layers --dl-layers`{{execute}}
+`source oe-init-build-env`{{execute}}
+`bitbake -g curl`{{execute}}
 
 More can be found at the scenario [on Markdown extensions](https://katacoda.com/scenario-examples/markdown-extensions).

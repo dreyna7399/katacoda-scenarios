@@ -1,4 +1,3 @@
-Multilib in WRLinux 10.18
 
 ## Multilib is enabled by default in WrLinux
 
@@ -14,6 +13,10 @@ For 64-bit bsps, it sets proper multilib configure in bsp specified configure fi
 
       MULTILIBS ?= "multilib:lib32" 
       DEFAULTTUNE_virtclass-multilib-lib32 ?= "core2-32"
+
+See these configuration setups in conf/local.conf.
+
+`tail build/conf/local.conf`{{execute}}
 
 If you want to disable multilib, it could be done by reset MULTILIBS in conf/local.conf.
 

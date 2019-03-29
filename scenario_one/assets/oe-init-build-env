@@ -1,4 +1,5 @@
-echo "... oe-init-build-env ..."
+#!/bin/sh
+
 export PATH="$PATH:`pwd`/layers/oe-core/bitbake/bin"
 
 cat <<EOF
@@ -33,7 +34,7 @@ Common Yocto Project images, typically built with distro poky, are:
     core-image-sato
 
 You can also run generated qemu images with a command like 'runqemu qemux86-64'
-EOF 
+EOF
 
 cd build
 

@@ -2,7 +2,7 @@
 
 # ./wrlinux-x/setup.sh --machines qemux86-64
 
-if [ "--machines" = "$1" ] then
+if [ "--machines" = "$1" ] ; then
 	cat <<EOF_CONFIG
 The End User License Agreement is available at:
 	/opt/wcoyote/lts-18/wrlinux-x/EULA

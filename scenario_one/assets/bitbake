@@ -1,11 +1,33 @@
 #!/bin/sh
 
-# bitbake -g curl
+# bitbake simulator
 
 if [ "-g" = "$1" ] ; then
+	# bitbake -g curl
 	echo '"curl" -> "ca-certificates"' >> recipe-depends.dot
+
+elif [ "populate_sdk" = "$3" ] ; then
+	# bitbake lib32-wrlinux-image-glibc-core -c populate_sdk
+
+	cat <<EOPOP
+ERROR: Task do_populate_sdk does not exist for target lib32-wrlinux-image-glibc-core
+  (virtual:multilib:lib32:/home/kkang/buildarea/WRLX-20181031/repo/layers/wrlinux/wrlinux-distro/recipes-base/images/wrlinux-image-glibc-core.bb:do_populate_sdk).
+  Close matches:
+     do_populate_lic
+     do_populate_lic_deploy
+  ERROR: Command execution failed: 1
+EOPOP
+
+elif [ "lib32-wrlinux-image-glibc-core" = "$1" ] ; then
+	# bitbake lib32-wrlinux-image-glibc-core
+	echo "bitbake lib32-wrlinux-image-glibc-core"
+
+elif [ "wrlinux-image-glibc-core" = "$1" ] ; then
+	#bitbake wrlinux-image-glibc-core -c populate_sdk
+	echo "bitbake wrlinux-image-glibc-core -c populate_sdk"
+
 else 
-	cat <<EOF
+	cat <<EOFHELP
 Usage: bitbake [options] [recipename/target recipe:do_task ...]
 
     Executes the specified task (default is 'build') for a given set of target recipes (.bb files).
@@ -105,7 +127,7 @@ Options:
   --runonly=RUNONLY     Run only the specified task within the taskgraph of
                         the specified targets (and any task dependencies those
                         tasks may have).
-EOF
+EOFHELP
 
 fi
 

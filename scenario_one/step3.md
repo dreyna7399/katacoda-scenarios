@@ -17,8 +17,8 @@ It needs to set MULTILIB_SCRIPTS in the form : in recipe. For curl, update oe-co
 
 </p>
 
-`inherit multilib_script`{{execute}}
-`MULTILIB_SCRIPTS = "${PN}-dev:${bindir}/curl-config"`{{execute}}
+      inherit multilib_script
+      MULTILIB_SCRIPTS = "${PN}-dev:${bindir}/curl-config"
 
 <p>
 It is created to deal with binary and executable script file conflicts so don't abuse it. A wrong example is about package os-release.

@@ -7,11 +7,11 @@
   "details": {
     "steps": [
       {
-        "title": "Step 1 - Multilib support in WRLinux 10.18 ",
+        "title": "Step 1 - Multilib support",
         "text": "step1.md"
       },
       {
-        "title": "Step 2 - Multilib Improvements in WRLinux 10.18",
+        "title": "Step 2 - Multilib Improvements",
         "text": "step2.md"
       },
       {
@@ -25,7 +25,7 @@
     ],
     "intro": {
       "text": "intro.md",
-      "code": "host_setup.sh"
+      "courseData": "host_setup.sh"
     },
     "finish": {
       "text": "finish.md"
@@ -36,7 +36,8 @@
         {"file": "oe-init-build-env", "target": "~/", "chmod": "+x"},
         {"file": "bitbake", "target": "~/layers/oe-core/bitbake/bin/", "chmod": "+x"},
         {"file": "environment-setup-x86_64-wrlinuxsdk-linux", "target": "~/", "chmod": "+x"},
-        {"file": "recipe-depends.dot", "target": "~/build/"}
+        {"file": "recipe-depends.dot", "target": "~/build/"},
+        {"file": "local.conf", "target": "~/build/"}
       ]
     }
   },

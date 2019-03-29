@@ -7,7 +7,7 @@ Tasks populate_sdk and populate_sdk_ext are removed for multilib images by oe-co
 
 So when you run 'bitbake lib32-wrlinux-image-glibc-core -c populate_sdk', it fails:
 
-`$ bitbake lib32-wrlinux-image-glibc-core -c populate_sdk`{{execute}}
+`bitbake lib32-wrlinux-image-glibc-core -c populate_sdk`{{execute}}
 
       ERROR: Task do_populate_sdk does not exist for target lib32-wrlinux-image-glibc-core
       (virtual:multilib:lib32:/home/kkang/buildarea/WRLX-20181031/repo/layers/wrlinux/wrlinux-distro/recipes-base/images/wrlinux-image-glibc-core.bb:do_populate_sdk).
@@ -25,12 +25,17 @@ Following steps help to build multilib image lib32-wrlinux-image-glibc-core and 
 </p>
 
       # setup project
-`$ ./wrlinux-x/setup.sh --machines=qemux86-64 --dl-layers --accept-eula=yes`{{execute}}
-`$ source  oe-init-build-env`{{execute}}
+`./wrlinux-x/setup.sh --machines=qemux86-64 --dl-layers --accept-eula=yes`{{execute}}
+
+      # setup WR Linux buildtools environment
+`source  environment-setup-x86_64-wrlinuxsdk-linux`{{execute}}
+
+      # setup build environment
+`source  oe-init-build-env`{{execute}}
 
       # build multilib image
-`$ bitbake lib32-wrlinux-image-glibc-core`{{execute}}
+`bitbake lib32-wrlinux-image-glibc-core`{{execute}}
 
       # populate sdk
-`$ bitbake wrlinux-image-glibc-core -c populate_sdk`{{execute}}
+`bitbake wrlinux-image-glibc-core -c populate_sdk`{{execute}}
 

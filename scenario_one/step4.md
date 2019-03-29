@@ -1,6 +1,5 @@
-### Tasks populate_sdk and populate_sdk_ext are removed for multilib images
 
-Tasks populate_sdk and populate_sdk_ext are removed for multilib images by oe-core commit 77144bc. It says
+Note that the tasks populate_sdk and populate_sdk_ext are removed for multilib images by oe-core commit 77144bc. It says
 
       The "bitbake image -cpopulate_sdk/ext" generates SDK/eSDK for all multilib
       variants, so "bitbake lib32-image -cpopulate_sdk/ext" is not needed

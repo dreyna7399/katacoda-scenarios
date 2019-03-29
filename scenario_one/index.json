@@ -1,9 +1,9 @@
 {
   "pathwayTitle": "LTS-18 Tutorials",
-  "title": "Multilib in WRLinux 10.18",
-  "description": "Learn how to create Multilibs in WRLinux 10.18",
+  "title": "Multilib support in WRLinux 10.18",
+  "description": "Learn about Multilib support in WRLinux 10.18",
   "difficulty": "intermediate",
-  "time": "5-10 minutes",
+  "time": "10-15 minutes",
   "details": {
     "steps": [
       {
@@ -23,13 +23,14 @@
         "text": "step4.md"
       },
       {
-        "title": "Step 5 - Building Multilib Summary",
+        "title": "Step 5 - Building Multilibs",
         "text": "step5.md"
       }
     ],
     "intro": {
       "text": "intro.md",
-      "courseData": "host_setup.sh"
+      "courseData": "host_setup.sh",
+      "code": "host_setup.sh"
     },
     "finish": {
       "text": "finish.md"

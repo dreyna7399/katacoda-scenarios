@@ -37,7 +37,7 @@
         {"file": "bitbake", "target": "~/layers/oe-core/bitbake/bin/", "chmod": "+x"},
         {"file": "environment-setup-x86_64-wrlinuxsdk-linux", "target": "~/", "chmod": "+x"},
         {"file": "recipe-depends.dot", "target": "~/build/"},
-        {"file": "local.conf", "target": "~/build/"}
+        {"file": "local.conf", "target": "~/build/conf/"}
       ]
     }
   },

@@ -8,12 +8,18 @@ Take curl/lib32-curl as a example. Check the dependency digraph file recipe-depe
 Set up your installation:
 <p>`./wrlinux-x/setup.sh --machine qemumips64 --all-layers --dl-layers`{{execute}}
 
-Set up your shell environment:
-<p>`source oe-init-build-env`{{execute}}
+Setup WR Linux buildtools environment
+`source  environment-setup-x86_64-wrlinuxsdk-linux`{{execute}}
+
+Setup build environment
+`source  oe-init-build-env`{{execute}}
 
 Build the 'curl' package:
 <p>`bitbake -g curl`{{execute}}
 
 Observe the 'curl' dependency: "curl" -> "ca-certificates":
 <p>`grep '".*curl" -> ".*ca-certificates"' recipe-depends.dot`{{execute}}
+
+Return to the top directory when you are done:
+<p>`cd ..`{{execute}}
 

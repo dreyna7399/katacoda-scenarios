@@ -20,5 +20,5 @@ See these configuration setups in conf/local.conf.
 
 If you want to disable multilib, it could be done by reset MULTILIBS in conf/local.conf.
 
-`echo 'MULTILIBS = ""' >> conf/local.conf`{{execute}}
+      echo 'MULTILIBS = ""' >> conf/local.conf
 

@@ -1,16 +1,19 @@
-Within each Wind River step, a series of Markdown extensions have been created that can provide various details for the users' experience.
 
-For example, commands such as `echo "Run in Terminal"`{{execute}}
- can be executed by clicking the command.
+# Extend allarch packages
 
-This is done by adding `execute` to the markdown code block, for example:
-<pre>`echo "Run in Terminal"`{{execute}}</pre>
+Because allarch packages only depend on non-multilib packages, if a multilib package depends on an allarch package, it may finally depend on a non-multilib package indirectly. That is not we expected and may cause runtime problems. The fix is to extend allarch packages to make them arch related when multilib is enabled. Then multilib packages only depend on multilib packages.
 
-Now do this stuff:
+Take curl/lib32-curl as a example. Check the dependency digraph file recipe-depends.dot which is one of the outputs of 'bitbake -g', you'll find that curl depends on allarch ca-certificates and lib32-curl depends on lib32-ca-certificates. 
+
+Set up your installation:
 `./wrlinux-x/setup.sh --machine qemumips64 --all-layers --dl-layers`{{execute}}
-<p>... and this ...</p>
+
+Set up your shell environment:
 `source oe-init-build-env`{{execute}}
 
+Build the 'curl' package:
 `bitbake -g curl`{{execute}}
 
-More can be found at the scenario [on Markdown extensions](https://katacoda.com/scenario-examples/markdown-extensions).
+Observe that 'curl' dependency: "curl" -> "ca-certificates":
+$ grep '".*curl" -> ".*ca-certificates"' recipe-depends.dot 
+

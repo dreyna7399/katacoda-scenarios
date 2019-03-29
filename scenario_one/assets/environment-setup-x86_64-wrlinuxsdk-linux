@@ -1,2 +1,3 @@
-echo "... environment-setup-x86_64-wrlinuxsdk-linux ..."
+# Normally set local bin tools path
+
 

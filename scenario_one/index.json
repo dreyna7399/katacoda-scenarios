@@ -7,28 +7,25 @@
   "details": {
     "steps": [
       {
-        "title": "Step 1 - Scenario Structure - WR",
+        "title": "Step 1 - Multilib support in WRLinux 10.18 ",
         "text": "step1.md"
       },
       {
-        "title": "Step 2 - Scenario Syntax - WR",
+        "title": "Step 2 - Multilib Improvements in WRLinux 10.18",
         "text": "step2.md"
       },
       {
-        "title": "Step 3 - CLI - WR",
+        "title": "Step 3 - Installed file conflicts",
         "text": "step3.md"
       },
       {
-        "title": "Step 4 - VS Code Extension - WR",
+        "title": "Step 4 - Multilib Population Tasks",
         "text": "step4.md"
-      },
-      {
-        "title": "Step 5 - WebHooks - WR",
-        "text": "step5.md"
       }
     ],
     "intro": {
-      "text": "intro.md"
+      "text": "intro.md",
+      "code": "host_setup.sh",
     },
     "finish": {
       "text": "finish.md"
@@ -39,8 +36,7 @@
         {"file": "oe-init-build-env", "target": "~/", "chmod": "+x"},
         {"file": "bitbake", "target": "~/layers/oe-core/bitbake/bin/", "chmod": "+x"},
         {"file": "environment-setup-x86_64-wrlinuxsdk-linux", "target": "~/", "chmod": "+x"},
-        {"file": "setup.sh", "target": "~/meta/", "chmod": "+x"},
-        {"file": "setup.sh", "target": "~/bin/", "chmod": "+x"}
+        {"file": "recipe-depends.dot", "target": "~/build/"}
       ]
     }
   },

@@ -1,17 +1,21 @@
-A Wind River Katacoda scenario is a series of Markdown files, bash scripts and a JSON file to define how your scenario should be configured, the text for the scenario and any automation required.
+Multilib in WRLinux 10.18
 
-## Task
+## Multilib is enabled by default in WrLinux
 
-Clone our example repository that contains the set of documentation with the following command:
+Multilib is enabled by default in WRLinux 10.18 for 64-bit bsps, including qemux86-64, qemuarm64, qemumips64 and other real bsps such as intel-x86-64 and intel-socfpga-64.
 
-`git clone https://github.com/katacoda/scenario-examples.git katacoda-scenario-examples`{{execute}}
+It includes "multilib.conf" to support multilib but reset variable "MULTILIBS" to disable multilib for all bsps in a common configure file wrlinux/wrlinux-distro/conf/distro/wrlinux-common.inc.
 
-Within the repository, you will see a set of examples of implementing various Katacoda functionality.
+# Multilib configuration
+      MULTILIBS ?= ""
+      require conf/multilib.conf
 
-The scenario you are currently reading is in the directory `ls -lha katacoda-scenario-examples/create-scenario-101`{{execute}}. The directory name is what defines the URL.
+For 64-bit bsps, it sets proper multilib configure in bsp specified configure files(.inc or .conf). Take qemux86-64 as a example, it enables multilib in wrlinux/wrlinux-distro/conf/distro/include/wrlinux-bsp-qemux86-64.inc. 
 
-An example of the current step is `katacoda-scenario-examples/create-scenario-101/step1.md`{{open}}
+      MULTILIBS ?= "multilib:lib32" 
+      DEFAULTTUNE_virtclass-multilib-lib32 ?= "core2-32"
 
-All the steps are collected via a JSON file, for example, `katacoda-scenario-examples/create-scenario-101/index.json`{{open}}.
+If you want to disable multilib, it could be done by reset MULTILIBS in conf/local.conf.
 
-The JSON file defines the scenario title, the description, steps order, the UI layout and environment. You can find more about the layouts within our scenarios at [katacoda.com/scenario-examples/ui-layouts](https://katacoda.com/scenario-examples/ui-layouts) and environments at [katacoda.com/scenario-examples/environments](https://katacoda.com/scenario-examples/environments).
+`echo 'MULTILIBS = ""' >> conf/local.conf`{{execute}}
+

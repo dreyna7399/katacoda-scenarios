@@ -1,8 +1,9 @@
 #!/bin/bash
 
 # ./wrlinux-x/setup.sh --machines qemux86-64
+# ./wrlinux-x/setup.sh --machines=qemux86-64 --dl-layers --accept-eula=yes
 
-if [ "--machine" = "$1" ] ; then
+if [ "--machine" = "$1" -o "--machines=qemux86-64" = "$1" ] ; then
 	cat <<EOF_CONFIG
 The End User License Agreement is available at:
 	/opt/wcoyote/lts-18/wrlinux-x/EULA

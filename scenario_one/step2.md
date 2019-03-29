@@ -5,21 +5,21 @@ Because allarch packages only depend on non-multilib packages, if a multilib pac
 
 Take curl/lib32-curl as a example. Check the dependency digraph file recipe-depends.dot which is one of the outputs of 'bitbake -g', you'll find that curl depends on allarch ca-certificates and lib32-curl depends on lib32-ca-certificates. 
 
-Set up your installation:
+1. Set up your installation:
 <p>`./wrlinux-x/setup.sh --machine qemumips64 --all-layers --dl-layers`{{execute}}
 
-Setup WR Linux buildtools environment
-`source  environment-setup-x86_64-wrlinuxsdk-linux`{{execute}}
+2. Setup WR Linux buildtools environment
+<p>`source  environment-setup-x86_64-wrlinuxsdk-linux`{{execute}}
 
-Setup build environment
-`source  oe-init-build-env`{{execute}}
+3. Setup build environment
+<p>`source  oe-init-build-env`{{execute}}
 
-Build the 'curl' package:
+4. Build the 'curl' package:
 <p>`bitbake -g curl`{{execute}}
 
-Observe the 'curl' dependency: "curl" -> "ca-certificates":
+5. Observe the 'curl' dependency: "curl" -> "ca-certificates":
 <p>`grep '".*curl" -> ".*ca-certificates"' recipe-depends.dot`{{execute}}
 
-Return to the top directory when you are done:
+6. Return to the top directory when you are done:
 <p>`cd ..`{{execute}}
 

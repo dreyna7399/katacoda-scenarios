@@ -42,9 +42,7 @@
                 {"file": "bitbake", "target": "/root/layers/oe-core/bitbake/bin/", "chmod": "+x"},
                 {"file": "environment-setup-x86_64-wrlinuxsdk-linux", "target": "/root/", "chmod": "+x"},
                 {"file": "recipe-depends.dot", "target": "/root/build/"},
-                {"file": "local.conf", "target": "/root/build/conf/"},
-                {"file": "recipe-depends.dot", "target": "/root/bin/"},
-                {"file": "wrlinux-bsp-qemux86-64.inc", "target": "/root/layers/wrlinux/wrlinux-distro/conf/distro/include/"}
+                {"file": "local.conf", "target": "/root/build/conf/"}
            ]
         }
     },

@@ -1,7 +1,6 @@
 {
-  "pathwayTitle": "LTS-18 Tutorials",
-  "title": "Multilib in WRLinux 10.18",
-  "description": "Learn how to create Multilibs in WRLinux 10.18",
+   "title": "TEST Multilib in WRLinux 10.18",
+  "description": "TEST Learn how to create Multilibs in WRLinux 10.18",
   "difficulty": "intermediate",
   "time": "5-10 minutes",
   "details": {

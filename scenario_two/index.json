@@ -1,0 +1,56 @@
+{
+  "pathwayTitle": "LTS-18 Tutorials",
+  "title": "Multilib in WRLinux 10.18",
+  "description": "Learn how to create Multilibs in WRLinux 10.18",
+  "difficulty": "intermediate",
+  "time": "5-10 minutes",
+  "details": {
+    "steps": [
+      {
+        "title": "Step 1 - Multilib support",
+        "text": "step1.md"
+      },
+      {
+        "title": "Step 2 - Multilib Improvements",
+        "text": "step2.md"
+      },
+      {
+        "title": "Step 3 - Installed file conflicts",
+        "text": "step3.md"
+      },
+      {
+        "title": "Step 4 - Multilib Populate",
+        "text": "step4.md"
+      },
+      {
+        "title": "Step 5 - Building Multilib Summary",
+        "text": "step5.md"
+      }
+    ],
+    "intro": {
+      "text": "intro.md",
+      "courseData": "host_setup.sh"
+    },
+    "finish": {
+      "text": "finish.md"
+    },
+    "assets": {
+      "host01": [
+        {"file": "setup.sh", "target": "~/wrlinux-x/", "chmod": "+x"},
+        {"file": "oe-init-build-env", "target": "~/", "chmod": "+x"},
+        {"file": "bitbake", "target": "~/layers/oe-core/bitbake/bin/", "chmod": "+x"},
+        {"file": "environment-setup-x86_64-wrlinuxsdk-linux", "target": "~/", "chmod": "+x"},
+        {"file": "recipe-depends.dot", "target": "~/build/"},
+        {"file": "local.conf", "target": "~/build/conf/"},
+        {"file": "recipe-depends.dot", "target": "~/bin/"},
+        {"file": "wrlinux-bsp-qemux86-64.inc", "target": "~/layers/wrlinux/wrlinux-distro/conf/distro/include/"}
+      ]
+    }
+  },
+  "environment": {
+    "uilayout": "terminal"
+  },
+  "backend": {
+    "imageid": "ubuntu"
+  }
+}

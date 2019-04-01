@@ -1,30 +1,26 @@
-Katacoda supports automatically uploading assets to scenarios. This is designed for configuration and short scripts.
 
-The options are:
+## Multilib is enabled by default in WrLinux
 
-1) `file`: The name of the file within the Assets directory.
+Multilib is enabled by default in WRLinux 10.18 for 64-bit bsps, including qemux86-64, qemuarm64, qemumips64 and other real bsps such as intel-x86-64 and intel-socfpga-64.
 
-2) `target`: The directory where the file should be uploaded to.
+For 64-bit bsps, it sets proper multilib configure in bsp specified configure files(.inc or .conf). Take qemux86-64 as a example, it enables multilib in wrlinux/wrlinux-distro/conf/distro/include/wrlinux-bsp-qemux86-64.inc. 
 
-3) `chmod`: Optional, automatically set a chmod flag after uploading the file.
+      MULTILIBS ?= "multilib:lib32" 
+      DEFAULTTUNE_virtclass-multilib-lib32 ?= "core2-32"
 
-The following is an example from the `index.json`. 
+You can see this here:
+<p>`cat layers/wrlinux/wrlinux-distro/conf/distro/include/wrlinux-bsp-qemux86-64.inc`{{execute}}
 
-<pre>
-"details": {
-    "assets": {
-        "host01": [
-            {"file": "wait.sh", "target": "/usr/local/bin/", "chmod": "+x"},
-            {"file": "deploy.sh", "target": "/usr/local/bin/", "chmod": "+x"}
-        ]
-    }
-},
-</pre>
+# Disabling Multilib Support
 
-View the uploaded files:
+If you want to disable multilib's for a **specific** project,  reset MULTILIBS in your conf/local.conf.
 
-`cat /usr/local/bin/wait.sh`{{execute}}
+      echo 'MULTILIBS = ""' >> conf/local.conf
 
-`cat /usr/local/bin/deploy.sh`{{execute}}
+If you want to diable multilib's for **all*** bsps in a common configure file wrlinux/wrlinux-distro/conf/distro/wrlinux-common.inc.
 
-**Note:** There is currently a file limit of 1mb. If the file is greater than 1mb, for performance, we recommend using a CDN and using cURL to download the file.
+      # Multilib configuration
+      MULTILIBS ?= ""
+      require conf/multilib.conf
+
+

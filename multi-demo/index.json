@@ -1,16 +1,38 @@
 {
     "noindex": true,
-    "title": "Upload File Assets",
-    "description": "Automatically upload file assets to the environment",
+    "title": "NEW! Multilib support in WRLinux 10.18",
+    "description": "NEW! Learn about Multilib support in WRLinux 10.18",
     "details": {
         "steps": [
-            {
-                "title": "Step 1",
-                "text": "step1.md",
-                "courseData": "background.sh",
-                "code": "foreground.sh"
-            }
+          {
+            "title": "Step 1 - Multilib support",
+            "text": "step1.md"
+          },
+          {
+            "title": "Step 2 - Multilib Improvements",
+            "text": "step2.md"
+          },
+          {
+            "title": "Step 3 - Installed file conflicts",
+            "text": "step3.md"
+          },
+          {
+            "title": "Step 4 - Multilib Populate",
+            "text": "step4.md"
+          },
+          {
+            "title": "Step 5 - Building Multilibs",
+            "text": "step5.md"
+          }
         ],
+        "intro": {
+          "text": "intro.md",
+          "courseData": "host_setup.sh",
+          "code": "host_setup.sh"
+        },
+        "finish": {
+          "text": "finish.md"
+        },
         "assets": {
             "host01": [
                 {"file": "wait.sh", "target": "/usr/local/bin/", "chmod": "+x"},
@@ -20,12 +42,13 @@
                 {"file": "bitbake", "target": "/root/layers/oe-core/bitbake/bin/", "chmod": "+x"},
                 {"file": "environment-setup-x86_64-wrlinuxsdk-linux", "target": "/root/", "chmod": "+x"},
                 {"file": "recipe-depends.dot", "target": "/root/build/"},
-                {"file": "local.conf", "target": "/root/build/conf/"}
+                {"file": "local.conf", "target": "/root/build/conf/"},
+                {"file": "recipe-depends.dot", "target": "/root/bin/"},
+                {"file": "wrlinux-bsp-qemux86-64.inc", "target": "/root/layers/wrlinux/wrlinux-distro/conf/distro/include/"}
            ]
         }
     },
     "environment": {
-        "hideintro": true, "hidefinish": true,
         "uilayout": "terminal"
     },
     "backend": {

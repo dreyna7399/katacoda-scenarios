@@ -15,12 +15,12 @@
             "host01": [
                 {"file": "wait.sh", "target": "/usr/local/bin/", "chmod": "+x"},
                 {"file": "deploy.sh", "target": "/usr/local/bin/", "chmod": "+x"},
-                {"file": "setup.sh", "target": "~/wrlinux-x/", "chmod": "+x"},
-                {"file": "oe-init-build-env", "target": "~/", "chmod": "+x"},
-                {"file": "bitbake", "target": "~/layers/oe-core/bitbake/bin/", "chmod": "+x"},
-                {"file": "environment-setup-x86_64-wrlinuxsdk-linux", "target": "~/", "chmod": "+x"},
-                {"file": "recipe-depends.dot", "target": "~/build/"},
-                {"file": "local.conf", "target": "~/build/conf/"}
+                {"file": "setup.sh", "target": "/root/wrlinux-x/", "chmod": "+x"},
+                {"file": "oe-init-build-env", "target": "/root/", "chmod": "+x"},
+                {"file": "bitbake", "target": "/root/layers/oe-core/bitbake/bin/", "chmod": "+x"},
+                {"file": "environment-setup-x86_64-wrlinuxsdk-linux", "target": "/root/", "chmod": "+x"},
+                {"file": "recipe-depends.dot", "target": "/root/build/"},
+                {"file": "local.conf", "target": "/root/build/conf/"}
            ]
         }
     },

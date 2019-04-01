@@ -1,0 +1,24 @@
+#!/bin/sh
+
+export PATH="$PATH:`pwd`/layers/oe-core/bitbake/bin"
+
+cat <<EOF
+This project was configured with the following options:
+    --machines qemux86-64
+
+Common Wind River images are:
+    wrlinux-image-glibc-small     (requires distro: wrlinux-small)
+    wrlinux-image-glibc-core      (suggests distro: wrlinux)
+    wrlinux-image-glibc-std       (suggests distro: wrlinux)
+    wrlinux-image-glibc-std-sato  (requires distro: wrlinux-std-sato)
+
+Common Yocto Project images, typically built with distro poky, are:
+    core-image-minimal
+    core-image-base
+    core-image-sato
+
+You can also run generated qemu images with a command like 'runqemu qemux86-64'
+EOF
+
+cd build
+

@@ -17,6 +17,17 @@ EOCURL
 	cp ../bin/recipe-depends.dot .
 	#echo '"curl" -> "ca-certificates"' >> recipe-depends.dot
 
+elif [ "lib32-wrlinux-image-glibc-core" = "$1" -a "populate_sdk" = "$3" ] ; then
+	# bitbake lib32-wrlinux-image-glibc-core -c populate_sdk
+	cat <<EOPOP
+ERROR: Task do_populate_sdk does not exist for target lib32-wrlinux-image-glibc-core
+  (virtual:multilib:lib32:/home/kkang/buildarea/WRLX-20181031/repo/layers/wrlinux/wrlinux-distro/recipes-base/images/wrlinux-image-glibc-core.bb:do_populate_sdk).
+  Close matches:
+     do_populate_lic
+     do_populate_lic_deploy
+  ERROR: Command execution failed: 1
+EOPOP
+
 elif [ "lib32-wrlinux-image-glibc-core" = "$1" ] ; then
 	# bitbake lib32-wrlinux-image-glibc-core
 	sleep 2
@@ -39,6 +50,9 @@ NOTE: Tasks Summary: Attempted 2802 tasks of which 14 didn't need to be rerun an
 
 Summary: There was 1 WARNING message shown.
 EOL_BUILD3
+	mkdir -p tmp-glibc/deploy/images
+	mkdir -p tmp-glibc/deploy/licenses
+	mkdir -p tmp-glibc/deploy/rpm
 
 elif [ "wrlinux-image-glibc-core" = "$1" ] ; then
 	#bitbake wrlinux-image-glibc-core -c populate_sdk
@@ -73,17 +87,14 @@ NOTE: Tasks Summary: Attempted 2802 tasks of which 14 didn't need to be rerun an
 
 Summary: There was 1 WARNING message shown.
 EOL_BUILD5
-
-elif [ "lib32-wrlinux-image-glibc-core" = "$1" -a "populate_sdk" = "$3" ] ; then
-	# bitbake lib32-wrlinux-image-glibc-core -c populate_sdk
-	cat <<EOPOP
-ERROR: Task do_populate_sdk does not exist for target lib32-wrlinux-image-glibc-core
-  (virtual:multilib:lib32:/home/kkang/buildarea/WRLX-20181031/repo/layers/wrlinux/wrlinux-distro/recipes-base/images/wrlinux-image-glibc-core.bb:do_populate_sdk).
-  Close matches:
-     do_populate_lic
-     do_populate_lic_deploy
-  ERROR: Command execution failed: 1
-EOPOP
+	mkdir -p tmp-glibc/deploy/images
+	mkdir -p tmp-glibc/deploy/licenses
+	mkdir -p tmp-glibc/deploy/rpm
+	mkdir -p tmp-glibc/deploy/sdks
+	touch tmp-glibc/deploy/sdks/wrlinux-small-10.18.44.4-glibc-x86_64-qemux86_64-wrlinux-image-glibc-core-sdk.host.manifest
+	touch tmp-glibc/deploy/sdks/wrlinux-small-10.18.44.4-glibc-x86_64-qemux86_64-wrlinux-image-glibc-core-sdk.sh
+	touch tmp-glibc/deploy/sdks/wrlinux-small-10.18.44.4-glibc-x86_64-qemux86_64-wrlinux-image-glibc-core-sdk.target.manifest
+	touch wrlinux-small-10.18.44.4-glibc-x86_64-qemux86_64-wrlinux-image-glibc-core-sdk.testdata.json
 
 else 
 	cat <<EOFHELP

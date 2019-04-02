@@ -41,7 +41,6 @@
         {"file": "oe-init-build-env", "target": "~/", "chmod": "+x"},
         {"file": "bitbake", "target": "~/layers/oe-core/bitbake/bin/", "chmod": "+x"},
         {"file": "environment-setup-x86_64-wrlinuxsdk-linux", "target": "~/", "chmod": "+x"},
-        {"file": "recipe-depends.dot", "target": "~/build/"},
         {"file": "local.conf", "target": "~/build/conf/"},
         {"file": "recipe-depends.dot", "target": "~/bin/"},
         {"file": "wrlinux-bsp-qemux86-64.inc", "target": "~/layers/wrlinux/wrlinux-distro/conf/distro/include/"}

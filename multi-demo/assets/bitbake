@@ -94,7 +94,7 @@ EOL_BUILD5
 	touch tmp-glibc/deploy/sdks/wrlinux-small-10.18.44.4-glibc-x86_64-qemux86_64-wrlinux-image-glibc-core-sdk.host.manifest
 	touch tmp-glibc/deploy/sdks/wrlinux-small-10.18.44.4-glibc-x86_64-qemux86_64-wrlinux-image-glibc-core-sdk.sh
 	touch tmp-glibc/deploy/sdks/wrlinux-small-10.18.44.4-glibc-x86_64-qemux86_64-wrlinux-image-glibc-core-sdk.target.manifest
-	touch wrlinux-small-10.18.44.4-glibc-x86_64-qemux86_64-wrlinux-image-glibc-core-sdk.testdata.json
+	touch tmp-glibc/deploy/sdks/wrlinux-small-10.18.44.4-glibc-x86_64-qemux86_64-wrlinux-image-glibc-core-sdk.testdata.json
 
 else 
 	cat <<EOFHELP
